@@ -1,0 +1,41 @@
+ <!-- Inicio de sesión-->
+  <div id="iniciar_sesion" class="modal blue-grey lighten-5 ">
+    <div class="modal-content">
+     <div id="_AJAX_LOGIN_"></div>
+
+      <h4 class=" center teal-text ">Iniciar Sesión</h4>
+
+      <div class="row" role="form" onkeypress="return runScriptLogin(event)" >
+        <form action="" class="col s12">
+          <div class="row">           
+            <div class="input-field col s12">
+              <input id="user_login" placeholder="Correo electrónico o teléfono"  type="text" class="validate">
+              <label for="user_login">Usuario</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="pass_login" type="password" class="validate">
+              <label for="pass_login">Contraseña</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <p>
+                <input type="checkbox" id="session_login" checked/>
+                <label for="session_login">Recordarme</label>
+              </p>
+            </div>
+
+          </div>
+          <a href="#">¿Has olvidado tu contraseña?</a>              
+        </form>
+    </div>
+    </div>
+    <div class="modal-footer blue-grey darken-4">
+      <a href="#!" class="  modal-close waves-effect waves-green btn-flat white-text">Cerrar</a>
+      <a type="button" href="#!" class=" modal-action  waves-effect waves-green btn-flat white-text" onclick="goLogin()">Iniciar Sesión</a>
+    </div>
+
+    <script type="text/javascript" src="vistas/app/js/login.js"></script>
+  </div>

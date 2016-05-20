@@ -27,3 +27,13 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+
+  <?php 
+    if(!isset($_SESSION['app-id'])){
+
+       include(HTML_DIR . '/publico/login.html'); 
+       include(HTML_DIR . '/publico/reg.html'); 
+       include(HTML_DIR . '/publico/lostpass.html'); 
+    }
+
+   ?>
