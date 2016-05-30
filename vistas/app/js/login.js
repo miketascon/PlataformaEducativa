@@ -27,6 +27,7 @@ function goLogin(){
             	result += '</div>';
             	
             	__('_AJAX_LOGIN_').innerHTML = result;
+              location.reload();
              
                  
               
@@ -37,7 +38,7 @@ function goLogin(){
 
     	}else if(connect.readyState != 4){
     		result = '<div class="alert alert-dismissible alert-warning">';
-      		result += '<button type="button" class="close" data-dismiss="alert">x</button>';
+      		
       		result += '<h4 class="center">Procesando...</h4>';
       		result += '<p><strong>Estamos intentando loguearte....</strong></p>';
       		result += '</div>';

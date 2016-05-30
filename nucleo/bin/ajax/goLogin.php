@@ -16,16 +16,17 @@
 
   			} else {
     			echo '<div class="alert  alert-danger">
-    			<button type="button" class="close" data-dismiss="alert">x</button>
+    			
     			<strong>  ERROR:</strong> Usuario o contraseña incorrecta.
   				</div>';
   			}
   			$db->liberar($sql);
   			$db->close();
+        
 	} else {
   		echo '<div class="alert  alert-danger">
-  		<button type="button" class="close" data-dismiss="alert">x</button>
-  		<strong>  ERROR:</strong> Debes llenar todos los campos.
+  	
+  		<strong>  ERROR:</strong> Debes llenar todos los campos!
 		</div>';
 	}
 

@@ -25,6 +25,6 @@
   </footer>
             
 
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="vistas/app/js/jquery-1.12.4.min.js"></script>
   <script src="vistas/materialize/js/materialize.min.js"></script>
   <script src="vistas/app/js/init.js"></script>
