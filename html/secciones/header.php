@@ -8,7 +8,11 @@
 	<link href="vistas/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   	<link href="vistas/app/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="vistas/app/css/styleIcomoon.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   
+   
+   
   	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   	<script type="text/javascript" src="vistas/app/js/generales.js"></script>
+    
   	
 </head>

@@ -13,12 +13,12 @@ function Users() {
            'email' => $d['email'],
            'password' => $d['password'],
            'gender' => $d['gender'],
-           'id_country' => $d['id_country'],
+           'permisos' => $d['permisos'],
            'phone' => $d['phone'],
            'cel_phone' => $d['cel_phone'],
            'address' => $d['address'],
-           'permisos' => $d['permisos']
-
+           'id_country' => $d['id_country']
+           
         );
 
     }

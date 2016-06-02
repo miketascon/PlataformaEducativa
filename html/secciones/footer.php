@@ -26,5 +26,8 @@
             
 
   <script src="vistas/app/js/jquery-1.12.4.min.js"></script>
+  <script src="vistas/app/js/jquery-ui.min.js"></script>
+
   <script src="vistas/materialize/js/materialize.min.js"></script>
   <script src="vistas/app/js/init.js"></script>
+  

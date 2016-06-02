@@ -1,18 +1,18 @@
 function goReg(){
-	var connect, form, response, result, first_name, last_name, email, password, password_two, country, genero, tyc;
+	var connect, form, response, result, first_name, last_name, email, password, password_two,  genero, tyc;
     first_name = __('first_name').value;
 	  last_name = __('last_name').value;
     email = __('email').value;
   	password = __('password').value;
     password_two = __('password_two').value;
-    country = __('country').value;
+   
     genero = __('genero').value;
   	tyc = __('tyc').checked ? true : false;
 
     if(tyc == true){
-      if(first_name != '' && last_name != '' && email != '' && password != '' && country != '' && genero != ''){
+      if(first_name != '' && last_name != '' && email != '' && password != '' && genero != ''){
         if(password == password_two){
-            form = 'first_name=' + first_name + '&last_name=' + last_name + '&email=' + email + '&password=' + password + '&country=' + country + '&genero=' + genero;
+            form = 'first_name=' + first_name + '&last_name=' + last_name + '&email=' + email + '&password=' + password + '&genero=' + genero;
  
             connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             connect.onreadystatechange = function() {
