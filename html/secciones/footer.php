@@ -19,7 +19,8 @@
           <div class="footer-copyright blue-grey darken-3">
             <div class="container">
             <?php echo APP_COPY; ?>
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a class="grey-text text-lighten-4 right" href="html/tyc.html" >Términos y condiciones</a>
+            
             </div>
           </div>
   </footer>

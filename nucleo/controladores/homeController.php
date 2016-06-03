@@ -1,4 +1,4 @@
 <?php 
 
-     include(APP_DIR . 'home.php');
+     include(APP_DIR . 'app/secciones/home.php');
  ?>
