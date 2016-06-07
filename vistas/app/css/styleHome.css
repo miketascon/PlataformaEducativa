@@ -1,5 +1,11 @@
-* Toggle Styles */
 
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+/* Toggle Styles */
+/*
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -42,7 +48,7 @@
     margin-right: -250px;
 }
 
-/* Sidebar Styles */
+/* Sidebar Styles 
 
 .sidebar-nav {
     position: absolute;
@@ -116,4 +122,4 @@
         position: relative;
         margin-right: 0;
     }
-}
+}*/

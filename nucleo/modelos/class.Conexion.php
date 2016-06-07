@@ -19,6 +19,14 @@
   		public function recorrer($query) {
     		return mysqli_fetch_array($query);
   		}
+      public function consultaSimple($sql){
+        $this->con->query($sql);
+      }
+        
+      public function consultaRetorno($sql){
+        $datos = $this->con->query($sql);
+        return $datos;
+      }
 
 	}
 ?>

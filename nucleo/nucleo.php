@@ -13,7 +13,7 @@ date_default_timezone_set('America/Bogota');
 #Constatntes de la aplicación
 define('HTML_DIR', 'html/');//fichero html
 define('APP_DIR', 'vistas/');
-define('APP_TITLE', 'PlataformaTecnologica'); //nombre de la app
+define('APP_TITLE', 'Educación Creativa'); //nombre de la app
 define('APP_COPY', 'Copyright &copy: ' . date('Y',time()) . ' MTsoluctions ');// Derechos de autor
 define('APP_URL', 'http//:localhost/PlataformaEducativa'); //url base de la aplicación
 
@@ -27,6 +27,8 @@ require('vendor/autoload.php');
 require('nucleo/modelos/class.Conexion.php');
 require('nucleo/bin/funciones/Encrypt.php');
 require('nucleo/bin/funciones/Users.php');
+
+
 
 
 

@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="?view=home">Plataforma Educativa</a>
+      <a class="navbar-brand" href="?view=home">Educación Creativa</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -25,12 +25,12 @@
         </button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="?view=perfil"><?php echo strtoupper($_users[$_SESSION['app_id']]['names']);  ?></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-bell text-prymary"></span></a></li>
-         <li><a href="#"><span class="glyphicon glyphicon-comment"></span></a></li>
+        <li><a href="?view=perfil " ><span class="text-color-icon"><?php echo strtoupper($_users[$_SESSION['app_id']]['names']);  ?></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-bell text-color-icon"><small class="small ">75</small></span></a></li>
+         <li><a href="#"><span class="glyphicon glyphicon-comment text-color-icon "><small class="small">5</small></span></a></li>
         
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user text-color-icon"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?view=perfil">Perfil</a></li>
             <?php 
@@ -44,7 +44,7 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="?view=logout">Salir</a></li>
+            <li  ><a href="?view=logout" class=" "><span class="glyphicon glyphicon-off  text-color-salir"> Salir</a></li>
           </ul>
         </li>
       </ul>
@@ -54,8 +54,12 @@
 </nav>
 
 </header>
-<section class="jumbotron">
-    <div class="container">
-      
-    </div>
-</section>
+
+
+<?php if($_users[$_SESSION['app_id']]['permisos'] > 1){
+                   echo '<section class="jumbotron">
+                        <div class="container">
+                         <h3 class="info"><marquee class=" " behavior="left">Aqui va ir una variable para mostrar informacion deseada y esto es solo la prueba de como funcionara este dato</marquee></h3>
+                        </div>
+                        </section>';
+      } ?>

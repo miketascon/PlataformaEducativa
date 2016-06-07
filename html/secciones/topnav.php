@@ -2,7 +2,7 @@
   <nav class="blue-grey darken-4" role="navigation">
 
     <div class="nav-wrapper container">
-      <a id="logo-container" href="" class="brand-logo">MTsolutions</a>
+      <a id="logo-container" href="" class="brand-logo">Educación Creativa</a>
       <ul class="right hide-on-med-and-down">
         <li><a class="teal-text text-lighten-1" href=""><i class="tiny material-icons teal-text text-lighten-2">home</i></a></li>
        

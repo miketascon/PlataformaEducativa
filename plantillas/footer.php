@@ -1,16 +1,24 @@
 <footer>
     <div class="container">
       <div class="row">
-        <div class="col-xs-6">
-          <p><?php echo APP_COPY; ?></p>
-        </div>
-        <div class="col-xs-6">
-          <ul class="list-inline text-right">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">twitrer</a></li>
-            <li><a href="#">Youtube</a></li>
-          </ul>
-        </div>
+      <?php if($_users[$_SESSION['app_id']]['permisos'] == 1){
+                   echo '<div class="col-xs-12 " style="text-align: center;">
+                        <p>' . APP_COPY . '</p>
+                        </div>';
+            }else{
+              echo '<div class="col-xs-6 " >
+                    <p>' . APP_COPY . '</p>
+                    </div>
+                     <div class="col-xs-6">
+                      <ul class="list-inline text-right">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">twitrer</a></li>
+                        <li><a href="#">Youtube</a></li>
+                      </ul>
+                    </div>';
+            } ?>
+        
+       
       </div>
     </div>
   </footer>
