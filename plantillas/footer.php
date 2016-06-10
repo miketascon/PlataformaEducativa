@@ -25,3 +25,5 @@
 
   <script src="vistas/app/js/jquery-1.12.4.min.js"></script>
   <script src="vistas/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vistas/app/js/ajaxform.js"></script>
+ 

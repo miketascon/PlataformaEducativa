@@ -9,3 +9,7 @@ function DeleteItem(contenido,url) {
       window.location = url;
   }
 }
+
+function Delete(url){
+	window.location = url
+}

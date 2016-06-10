@@ -18,19 +18,19 @@ if(isset($_SESSION['app_id']) and $_users[$_SESSION['app_id']]['permisos'] == 1)
 				}
 			break;
 		case 'edit':
-				if($isset_id and array_key_exists($_GET['id_user'],$_users)){
+				if($isset_id){
 					if($_POST){
 						$usuario->Edit();
 						header('location: ?view=admin');
+
 					}else{
-						header('location: ?view=admin');
+						include(APP_DIR . 'app/secciones/editUser.php');
+
 					}
-						
-				}else{
-					header('location: ?view=admin');
+
 				}
-					
-					
+
+
 			break;
 		case 'delete':
 				if($isset_id){
@@ -40,9 +40,9 @@ if(isset($_SESSION['app_id']) and $_users[$_SESSION['app_id']]['permisos'] == 1)
 					header('location: ?view=admin');
 				}
 			break;
-		
+
 		default:
-			# code...
+			header('location: ?view=admin');
 			break;
 	}
 

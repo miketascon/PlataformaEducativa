@@ -27,10 +27,12 @@ require('vendor/autoload.php');
 require('nucleo/modelos/class.Conexion.php');
 require('nucleo/bin/funciones/Encrypt.php');
 require('nucleo/bin/funciones/Users.php');
+require('nucleo/bin/funciones/ListaCursos.php');
 
 
 
 
 
 $_users = Users();
+$_cursos = ListaCursos();
  ?>

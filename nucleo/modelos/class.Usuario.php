@@ -31,21 +31,29 @@ class Usuario{
 		$this->names = $this->con->real_escape_string($_POST['names']);
 		$this->last_names = $this->con->real_escape_string($_POST['last_names']);
 		$this->email = $this->con->real_escape_string($_POST['email']);
-		$this->password = Encrypt($_POST['password']);		
+		$this->password = Encrypt($_POST['password']);
+		$this->gender = $this->con->real_escape_string($_POST['gender']);		
 		$this->permisos = $this->con->real_escape_string($_POST['permisos']);
 		$this->phone = $this->con->real_escape_string($_POST['phone']);
 		$this->cel_phone = $this->con->real_escape_string($_POST['cel_phone']);
 		$this->address = $this->con->real_escape_string($_POST['address']);
 		$this->id_country = $this->con->real_escape_string($_POST['id_country']);
 		$fecha_reg = date('d/m/Y (H:i:s)', time());
-		$this->con->query("INSERT INTO user(names,last_names,email,password,gender,permisos,phone,cel_phone,address,id_country,fecha_reg)
-			VALUES ('$this->names','$this->last_names','$this->email','$this->password','$this->gender','$this->permisos','$this->phone','$this->cel_phone',
-				'$this->address','$this->id_country','$this->fecha_reg');");
 
+		$sql = $this->con->query("SELECT id_user FROM user WHERE email = '$this->email' LIMIT 1;");
+		if( $this->con->rows($sql) == 0){
+
+
+			$this->con->query("INSERT INTO user(names,last_names,email,password,gender,permisos,phone,cel_phone,address,id_country,fecha_reg)
+				VALUES ('$this->names','$this->last_names','$this->email','$this->password','$this->gender','$this->permisos','$this->phone','$this->cel_phone',
+				'$this->address','$this->id_country','$fecha_reg');");
+		}		 
+		
+        
+		
 	} 
 	public function Edit(){
 		$this->id_user = intval($_GET['id_user']);
-
 		$this->names = $this->con->real_escape_string($_POST['names']);
 		$this->last_names = $this->con->real_escape_string($_POST['last_names']);
 		$this->email = $this->con->real_escape_string($_POST['email']);
@@ -56,15 +64,15 @@ class Usuario{
 		$this->cel_phone = $this->con->real_escape_string($_POST['cel_phone']);
 		$this->address = $this->con->real_escape_string($_POST['address']);
 		$this->id_country = $this->con->real_escape_string($_POST['id_country']);
-		$this->con->query("UPDATE user SET names='$this->names',last_names='$this->last_names',email='$this->email',password='$this->password',
-			gender='$this->gender',$this->permisos',phone='$this->phone',cel_phone='$this->cel_phone',address='$this->address',id_country='$this->id_country' 
+		$this->con->query("UPDATE user SET names='$this->names', last_names='$this->last_names', email='$this->email', password='$this->password',
+			gender='$this->gender', permisos='$this->permisos', phone='$this->phone',cel_phone='$this->cel_phone', address='$this->address', id_country='$this->id_country'
 			WHERE id_user='$this->id_user';");
 
 	}
 	public function Delete(){
 		$this->id_user = intval($_GET['id_user']);
 		$this->con->query("DELETE FROM user WHERE id_user='$this->id_user';");
-		header('location: ?view=admin');
+		
 	}
 
 	public function __destruct(){
@@ -73,3 +81,4 @@ class Usuario{
 }
      
 ?>
+<?php var_dump($email) ?>
