@@ -26,13 +26,15 @@ define('DB_NAME','empresa');
 require('vendor/autoload.php');
 require('nucleo/modelos/class.Conexion.php');
 require('nucleo/bin/funciones/Encrypt.php');
+require('nucleo/bin/funciones/Descrypt.php');
 require('nucleo/bin/funciones/Users.php');
 require('nucleo/bin/funciones/ListaCursos.php');
+require('nucleo/bin/funciones/ListaPais.php');
 
 
 
 
-
+$_pais = ListaPais();
 $_users = Users();
 $_cursos = ListaCursos();
  ?>

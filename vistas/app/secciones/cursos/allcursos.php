@@ -41,7 +41,7 @@
       									<label for="nombre" class="col-lg-2 control-label">Nombre del curso</label>
       								   <div class="col-lg-10">
                          <div id="_AJAX_NOMBRE_CURSO_"></div>
-       								    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+       								    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
       								   </div>
     								</div>
                       <div class="form-group">

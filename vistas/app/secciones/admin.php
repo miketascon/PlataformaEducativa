@@ -38,7 +38,7 @@
       									<label for="names" class="col-lg-2 control-label focusColor">Nombres</label>
       								   <div class="col-lg-10">
                          <div id="_AJAX_NOMBRE_"></div>
-       								    <input type="text" class="form-control" id="names" name="names" placeholder="" maxlength="100">
+       								    <input type="text" class="form-control" id="names" name="names" placeholder="" maxlength="100" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
       								   </div>
 
     								</div>
@@ -46,7 +46,7 @@
       									<label for="last_names" class="col-lg-2 control-label">Apellidos</label>
       								   <div class="col-lg-10">
                          <div id="_AJAX_APELLIDOS_"></div>
-       								    <input type="text" class="form-control" id="last_names" name="last_names" placeholder="" maxlength="100">
+       								    <input type="text" class="form-control" id="last_names" name="last_names" placeholder="" maxlength="100" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
       								   </div>
     								</div>
     								<div class="form-group">
@@ -110,9 +110,9 @@
       								   </div>
     								</div>
     								<div class="form-group">
-      									<label for="id_country" class="col-lg-2 control-label">Pais</label>
+      									<label for="names_country" class="col-lg-2 control-label">Pais</label>
       								   <div class="col-lg-10">
-       								    <input type="text" class="form-control" name="id_country"  id="id_country" placeholder="">
+       								    <input type="text" class="form-control" name="names_country"  id="names_country" placeholder="" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
       								   </div>
     								</div>
 								<div class="modal-footer">
@@ -170,11 +170,15 @@
                 
               </tbody>
             </table>
+
+            
           </div>
         </div>
 
       </div>
     </div>  
+
+
 
         
 <?php include('plantillas/footer.php');?>

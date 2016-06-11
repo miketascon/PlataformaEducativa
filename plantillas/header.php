@@ -20,6 +20,10 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&amp;subset=cyrillic,latin,greek,vietnamese">
 	<link rel="stylesheet" type="text/css" href="vistas/app/css/style.css">
+	<link rel="stylesheet" type="text/css" href="vistas/app/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="vistas/app/css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" type="text/css" href="vistas/app/css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" type="text/css" href="vistas/app/css/hint.min.css">
 	<link rel="stylesheet" type="text/css" href="vistas/bootstrap/css/bootstrap.min.css">
 	<link href="vistas/app/css/styleIcomoon.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<script type="text/javascript" src="vistas/app/js/generales.js"></script>

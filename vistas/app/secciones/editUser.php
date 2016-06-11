@@ -29,14 +29,14 @@
                       <div class="form-group">
                         <label for="names" class="col-lg-2 control-label">Nombres</label>
                          <div class="col-lg-10">
-                          <input type="text" class="form-control" id="names" name="names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['names']; ?>">
+                          <input type="text" class="form-control" id="names" name="names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['names']; ?>" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
 
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="last_names" class="col-lg-2 control-label">Apellidos</label>
                          <div class="col-lg-10">
-                          <input type="text" class="form-control" id="last_names" name="last_names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['last_names']; ?>">
+                          <input type="text" class="form-control" id="last_names" name="last_names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['last_names']; ?>" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
                          </div>
                     </div>
                     <div class="form-group">
@@ -45,10 +45,11 @@
                           <input type="Email" name="email" class="form-control" id="email" placeholder="" value="<?php echo $_users[$_GET['id_user']]['email']; ?>">
                          </div>
                     </div>
+                    
                     <div class="form-group">
                         <label for="password" class="col-lg-2 control-label">Contraseña</label>
                          <div class="col-lg-10">
-                          <input type="password" name="password"  class="form-control" id="password" placeholder="Escribe la contraseña si deseas editarla" "<?php echo $_users[$_GET['id_user']]['password']; ?>">
+                          <input type="password" class="form-control" id="password" name="password" placeholder="" value="<?php echo Descrypt($_users[$_GET['id_user']]['password']) ; ?>">
                          </div>
                     </div>
                     <div class="form-group">
@@ -97,11 +98,12 @@
                          </div>
                     </div>
                     <div class="form-group">
-                        <label for="id_country" class="col-lg-2 control-label">Pais</label>
+                        <label for="names_country" class="col-lg-2 control-label">Pais</label>
                          <div class="col-lg-10">
-                          <input type="text" class="form-control" name="id_country"  id="id_country" placeholder="" value="<?php echo $_users[$_GET['id_user']]['id_country']; ?>">
+                          <input type="text" class="form-control" name="names_country"  id="names_country" placeholder="" value="<?php echo $_users[$_GET['id_user']]['names_country']; ?>" pattern="[A-Z ÁÉÍÓÚÑñ]*">
                          </div>
                     </div>
+
                 <div class="modal-footer">
                     <a type="button" href="?view=admin" class="btn btn-default" data-dismiss="modal">Volver</a>
                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>

@@ -24,6 +24,21 @@
   </footer>
 
   <script src="vistas/app/js/jquery-1.12.4.min.js"></script>
+  <script src="vistas/app/js/jquery-ui.min.js" type="text/javascript"></script>
+   <script src="vistas/app/js/ui.js" type="text/javascript"></script>
   <script src="vistas/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vistas/app/js/ajaxform.js"></script>
+  <script src="vistas/app/js/ajaxform.js"></script>
+  <script>
+  $(function(){
+    var autocompletar = new Array();
+    <?php //Esto es un poco de php para obtener lo que necesitamos
+     foreach ($_pais as $id_country => $usuarios_array) { //usamos count para saber cuantos elementos hay ?>
+       autocompletar.push('<?php echo $_pais[$id_country]['names_country']; ?>');
+     <?php } ?>
+     $("#names_country").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletar //Le decimos que nuestra fuente es el arreglo
+     });
+  });
+  </script>
+
  

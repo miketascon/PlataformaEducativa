@@ -20,17 +20,17 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-info">
+        <button type="submit" class="btn btn-info hint--bottom  hint--rounded" aria-label="Buscar Curso">
           <span class="glyphicon glyphicon-search"></span>
         </button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="?view=perfil " ><span class="text-color-icon"><?php echo strtoupper($_users[$_SESSION['app_id']]['names']);  ?></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-bell text-color-icon"><small class="small ">75</small></span></a></li>
-         <li><a href="#"><span class="glyphicon glyphicon-comment text-color-icon "><small class="small">5</small></span></a></li>
+        <li><a href="?view=perfil" class="hint--bottom  hint--rounded" aria-label="Ver perfil"><span class="text-color-icon"><?php echo strtoupper($_users[$_SESSION['app_id']]['names']);  ?></span></a></li>
+        <li><a href="#" class="hint--bottom  hint--rounded" aria-label="Notificaciones"><span class=" glyphicon glyphicon-bell text-color-icon" ><small class="small ">75</small></span></a></li>
+         <li><a href="#" class="hint--bottom  hint--rounded" aria-label="Mensajes"><span class="glyphicon glyphicon-comment text-color-icon "><small class="small">5</small></span></a></li>
         
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user text-color-icon"></span></a>
+          <a href="#" class="dropdown-toggle hint--bottom  hint--rounded" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Menu de usuario"><span class="glyphicon glyphicon-user text-color-icon"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?view=perfil">Perfil</a></li>
             <?php 

@@ -38,7 +38,7 @@
       									<label for="nombre" class="col-lg-2 control-label">Nombre del curso</label>
       								   <div class="col-lg-10">
                          <div id="_AJAX_NOMBRE_CURSO_"></div>
-       								    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="<?php echo $_cursos[$_GET['id_curso']]['nombre']; ?>">
+       								    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="<?php echo $_cursos[$_GET['id_curso']]['nombre']; ?>" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
       								   </div>
     								</div>
                       <div class="form-group">
