@@ -13,3 +13,5 @@ function DeleteItem(contenido,url) {
 function Delete(url){
 	window.location = url
 }
+
+

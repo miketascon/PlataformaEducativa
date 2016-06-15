@@ -8,6 +8,9 @@
 	<link href="vistas/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   	<link href="vistas/app/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="vistas/app/css/styleIcomoon.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="vistas/app/css/jquery.datetimerpicker.css">
+  <link rel="stylesheet" type="text/css" href="vistas/app/css/jquery.mCustomScrollbar.css">
    
    
    

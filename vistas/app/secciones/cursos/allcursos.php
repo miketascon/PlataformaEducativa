@@ -75,24 +75,35 @@
                 <tr class="danger" >
                   <th style="width: 25%;" >ficha</th>
                   <th style="width: 25%;">cursos</th>
-                  <th style="width: 25%;">Descripción</th>
-                 
+                  <th style="width: 25%;">Descripción</th>                 
                   <th style="width: 5%;">Editar</th>
                   <th style="width: 5%;">Eliminar</th>
                 </tr>
               </thead>
               <tbody >
               <?php   
-              	foreach ($_cursos as $id_curso => $curso_array) {
+              $conn = new ezSQL_mysql(DB_USER, DB_PASS, DB_NAME);
+              $total_cursos = $conn->get_var('SELECT count(*) FROM cursos');
+              $resultados   = 4;
+              $paginacion = new Zebra_Pagination();
+              $paginacion->records($total_cursos);
+              $paginacion->records_per_page($resultados);
+              // Quitar ceros en numeros con 1 digito en paginacion
+              $paginacion->padding(false);
+              $lista_cursos = $conn->get_results('SELECT * FROM cursos LIMIT ' . (($paginacion->get_page() - 1) * $resultados) . ', ' . $resultados);
 
-              		echo ' <tr >
-                  			<td>' . $_cursos[$id_curso]['ficha'] . '</td>
-                 		 	  <td>' . $_cursos[$id_curso]['nombre'] . '</td>
-                 		 	  <td>' . $_cursos[$id_curso]['descripcion'] . '</td>
+
+
+              	foreach ($lista_cursos as $cursos) {
+
+              		echo '<tr >
+                  			<td>' . $cursos->ficha . '</td>
+                 		 	  <td>' . $cursos->nombre . '</td>
+                 		 	  <td>' . $cursos->descripcion . '</td>
                  		 	
                   		 	
-                 		 	<td><a href="?view=cursos&mode=edit&id_curso='.$_cursos[$id_curso]['id_curso'].'" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>  </td> 
-                 		 	<td> <a href="#" class="btn btn-danger" onclick="DeleteItem(\'¿Está seguro de eliminar este usuario?\',\'?view=cursos&mode=delete&id_curso='.$_cursos[$id_curso]['id_curso'].'\')"><span class="glyphicon glyphicon-trash"></span></a> </td>
+                 		 	<td><a href="?view=cursos&mode=edit&id_curso='.$cursos->id_curso.'" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>  </td> 
+                 		 	<td> <a href="#" class="btn btn-danger" onclick="DeleteItem(\'¿Está seguro de eliminar este usuario?\',\'?view=cursos&mode=delete&id_curso='.$cursos->id_curso.'\')"><span class="glyphicon glyphicon-trash"></span></a> </td>
                       
                  		 	             		
                 			</tr>';
@@ -102,6 +113,7 @@
                 
               </tbody>
             </table>
+            <div class="center"> <?php $paginacion->render(); ?></div>
           </div>
         </div>
 

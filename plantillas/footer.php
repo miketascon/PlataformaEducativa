@@ -22,9 +22,11 @@
       </div>
     </div>
   </footer>
+  </div>
 
   <script src="vistas/app/js/jquery-1.12.4.min.js"></script>
   <script src="vistas/app/js/jquery-ui.min.js" type="text/javascript"></script>
+   <script src="vistas/app/js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="vistas/app/js/ui.js" type="text/javascript"></script>
   <script src="vistas/bootstrap/js/bootstrap.min.js"></script>
   <script src="vistas/app/js/ajaxform.js"></script>

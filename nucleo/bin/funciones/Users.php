@@ -3,7 +3,9 @@
 function Users() {
   $db = new Conexion();
 
-  $sql = $db->query("SELECT * FROM user;");
+ 
+
+  $sql = $db->query("SELECT * FROM user  ;");
   if($db->rows($sql) > 0){
     while($d = $db->recorrer($sql)){
       $users[$d['id_user']] = array(

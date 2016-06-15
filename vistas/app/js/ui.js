@@ -110,3 +110,11 @@ $( "#dialog-link, #icons li" ).hover(
 		$( this ).removeClass( "ui-state-hover" );
 	}
 );
+
+
+     $(".custom-scroll-containers").mCustomScrollbar({
+            theme:"dark-thin",
+            scrollbarPosition: "inside",
+            autoHideScrollbar: true,
+            scrollButtons:{ enable: true }
+        });

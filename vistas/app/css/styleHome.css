@@ -123,3 +123,13 @@ body {
         margin-right: 0;
     }
 }*/
+.content-page-container{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding-top: 3.6em;
+    width: 100%;
+    background-color: #EEEEEE;
+}

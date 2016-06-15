@@ -1,6 +1,10 @@
 <?php include('plantillas/header.php');?>
 <body>
 <?php include('plantillas/topnav.php');?>
+
+
+                 
+
 	<section class="main container">
     <div class="row">
       <section class="posts col-md-9">
@@ -130,5 +134,6 @@
 
 
 <?php include('plantillas/footer.php');?>
+
 </body>
 </html>

@@ -202,3 +202,13 @@ body {
 .alerta-danger .alerta-link {
   color: #843534;
 }
+.content-page-container{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding-top: 3.5em;
+    width: 100%;
+    background-color: #FAFAFA;
+}

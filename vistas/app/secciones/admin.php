@@ -130,7 +130,7 @@
   				</div>
 			</div>
 
-         
+   
       
 
 
@@ -149,18 +149,32 @@
                 </tr>
               </thead>
               <tbody >
-              <?php   
-              	foreach ($_users as $id_user => $usuarios_array) {
+              <?php  
+              $conn = new ezSQL_mysql(DB_USER, DB_PASS, DB_NAME);
+
+              $total_usuarios = $conn->get_var('SELECT count(*) FROM user');
+              $resultados   = 10;
+              $paginacion = new Zebra_Pagination();
+              $paginacion->records($total_usuarios);
+              $paginacion->records_per_page($resultados);
+              // Quitar ceros en numeros con 1 digito en paginacion
+              $paginacion->padding(false);
+
+              $usuarios = $conn->get_results('SELECT * FROM user LIMIT ' . (($paginacion->get_page() - 1) * $resultados) . ', ' . $resultados);
+
+
+
+              	foreach ($usuarios as $users){
 
               		echo ' 	<tr >
-                  			<td>' . $_users[$id_user]['names'] . '</td>
-                 		 	<td>' . $_users[$id_user]['last_names'] . '</td>
-                 		 	<td>' . $_users[$id_user]['email'] . '</td>
-                 		 	<td>' . $_users[$id_user]['cel_phone'] . '</td> 
-                 		 	<td>' . $_users[$id_user]['address'] . '</td> 
+                  			<td>' . $users->names . '</td>
+                 		 	<td>' . $users->last_names . '</td>
+                 		 	<td>' . $users->email . '</td>
+                 		 	<td>' . $users->cel_phone . '</td> 
+                 		 	<td>' . $users->address . '</td> 
                   		 	
-                 		 	<td><a href="?view=usuario&mode=edit&id_user='.$_users[$id_user]['id_user'].'" class="btn btn-success" data-toggle="modal" data-target="?view=usuario"><span class="glyphicon glyphicon-pencil"></span></a>  </td> 
-                 		 	<td> <a href="#" class="btn btn-danger" onclick="DeleteItem(\'¿Está seguro de eliminar este usuario?\',\'?view=usuario&mode=delete&id_user='.$_users[$id_user]['id_user'].'\')"><span class="glyphicon glyphicon-trash"></span></a> </td>
+                 		 	<td><a href="?view=usuario&mode=edit&id_user='.$users->id_user.'" class="btn btn-success" data-toggle="modal" data-target="?view=usuario"><span class="glyphicon glyphicon-pencil"></span></a>  </td> 
+                 		 	<td> <a href="#" class="btn btn-danger" onclick="DeleteItem(\'¿Está seguro de eliminar este usuario?\',\'?view=usuario&mode=delete&id_user='.$users->id_user.'\')"><span class="glyphicon glyphicon-trash"></span></a> </td>
                       
                  		 	             		
                 			</tr>';
@@ -170,15 +184,17 @@
                 
               </tbody>
             </table>
-
+               <div class="center"> <?php $paginacion->render(); ?></div>
             
           </div>
+             
+                 
         </div>
 
       </div>
     </div>  
 
-
+  
 
         
 <?php include('plantillas/footer.php');?>

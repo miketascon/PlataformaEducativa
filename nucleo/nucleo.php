@@ -23,6 +23,14 @@ define('DB_USER','root');
 define('DB_PASS','Persefone2014');
 define('DB_NAME','empresa');
 
+#librerias
+require('nucleo/librerias/Zebra_Pagination.php');
+require('nucleo/librerias/ez_sql_core.php');
+require('nucleo/librerias/ez_sql_mysql.php');
+
+
+
+#archivos requeridos
 require('vendor/autoload.php');
 require('nucleo/modelos/class.Conexion.php');
 require('nucleo/bin/funciones/Encrypt.php');
@@ -34,7 +42,10 @@ require('nucleo/bin/funciones/ListaPais.php');
 
 
 
+
+
 $_pais = ListaPais();
 $_users = Users();
 $_cursos = ListaCursos();
+
  ?>
