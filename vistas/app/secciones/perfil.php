@@ -16,6 +16,16 @@
     						<div class="col-md-4 col-sm-12 ">
                             <legend>Imagen de Perfil</legend>
 
+
+                                    <img src="prueba.png" alt="" width="250" height="300">
+
+                                  <form action="almacenar.php" method="POST" enctype="multipart/form-data">
+                                        <label for="imagen">Imagen:</label>
+                                            <input type="file" name="imagen" id="imagen" />
+                                            <input type="submit" name="subir" value="Subir Imagen"/>
+                                    </form>
+
+
                             </div>
     						<form id="formPerfil" class="form-horizontal col-md-7 col-sm-12" action="?view=perfil&mode=edit&id_user=<?php echo $_users[$_SESSION['app_id']]['id_user'];?>" method="POST"  enctype="application/x-www-form-urlencoded">
     							<fieldset>
@@ -66,7 +76,7 @@
                          </div>
                     </div>
                      <div class="modal-footer">
-                    <a type="button" href="?view=home" class="btn btn-default" data-dismiss="modal">Volver</a>
+                    
                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
                     </div>
 
