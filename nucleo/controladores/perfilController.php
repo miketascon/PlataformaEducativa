@@ -11,7 +11,7 @@
 		case 'edit':
 				if($isset_id){
 					if($_POST){
-						$usuario->Edit();
+						$usuario->EditPerFil();
 						header('location: ?view=home');
 
 					}else{
@@ -40,7 +40,7 @@
 		case 'edit':
 				if($isset_id){
 					if($_POST){
-						$usuario->Edit();
+						$usuario->EditPerfil();
 						header('location: ?view=home');
 
 					}else{

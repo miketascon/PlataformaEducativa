@@ -13,8 +13,11 @@
   					</div>
   					<div class="panel-body">
     					<div class="row">
-    						<div class="col-md-4"></div>
-    						<form id="formPerfil" class="form-horizontal col-md-7" action="?view=perfil&mode=edit&id_user=<?php echo $_GET['id_user'];?>" method="POST" onsubmit="return EditUser();" enctype="application/x-www-form-urlencoded">
+    						<div class="col-md-4 col-sm-12 ">
+                            <legend>Imagen de Perfil</legend>
+
+                            </div>
+    						<form id="formPerfil" class="form-horizontal col-md-7 col-sm-12" action="?view=perfil&mode=edit&id_user=<?php echo $_users[$_SESSION['app_id']]['id_user'];?>" method="POST"  enctype="application/x-www-form-urlencoded">
     							<fieldset>
     								<legend>Datos de usuario</legend>
     								 <div class="form-group">
@@ -37,12 +40,6 @@
                          </div>
                     </div>
 
-                     <div class="form-group">
-                        <label for="password" class="col-lg-2 control-label">Contraseña</label>
-                         <div class="col-lg-10">
-                          <input type="password" class="form-control" id="password" name="password" placeholder="" disabled="true" value="<?php echo Descrypt($_users[$_GET['id_user']]['password']) ; ?>">
-                         </div>
-                    </div>
                   
                       <div class="form-group">
                         <label for="phone" class="col-lg-2 control-label">Teléfono</label>
@@ -76,7 +73,7 @@
 
     							</fieldset>
     						</form>
-    						<div class="col-md-1"></div>
+    						<div class="col-md-1 col-sm-12"></div>
     					</div>
   					</div>
 				</div>

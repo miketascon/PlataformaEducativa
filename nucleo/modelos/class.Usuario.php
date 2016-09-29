@@ -75,11 +75,8 @@ class Usuario{
 	public function EditPerFil(){
 		$this->id_user = intval($_GET['id_user']);
 		$this->names = $this->con->real_escape_string($_POST['names']);
-		$this->last_names = $this->con->real_escape_string($_POST['last_names']);
+		$this->last_names = $this->con->real_escape_string($_POST['last_names']) ;
 		$this->email = $this->con->real_escape_string($_POST['email']);
-		$this->password = Encrypt($_POST['password']);
-		$this->gender = $this->con->real_escape_string($_POST['gender']);
-		$this->permisos = $this->con->real_escape_string($_POST['permisos']);
 		$this->phone = $this->con->real_escape_string($_POST['phone']);
 		$this->cel_phone = $this->con->real_escape_string($_POST['cel_phone']);
 		$this->address = $this->con->real_escape_string($_POST['address']);
