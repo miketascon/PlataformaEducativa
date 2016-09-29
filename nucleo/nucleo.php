@@ -20,7 +20,7 @@ define('APP_URL', 'http//:localhost/PlataformaEducativa'); //url base de la apli
 #Constantes de conexión
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS','Persefone2014');
+define('DB_PASS','Persefone2016');
 define('DB_NAME','empresa');
 
 #librerias

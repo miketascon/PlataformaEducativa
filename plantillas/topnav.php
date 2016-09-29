@@ -25,7 +25,7 @@
         </button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="?view=perfil" class="hint--bottom  hint--rounded" aria-label="Ver perfil"><span class="text-color-icon"><?php echo strtoupper($_users[$_SESSION['app_id']]['names']);  ?></span></a></li>
+        <li><a <?php echo 'href="?view=perfil&mode=edit&id_user='.$_users[$_SESSION['app_id']]['id_user'].'"' ?> class="hint--bottom  hint--rounded" aria-label="Ver perfil"><span class="text-color-icon"><?php echo strtoupper($_users[$_SESSION['app_id']]['names']);  ?></span></a></li>
         <li><a href="#" class="hint--bottom  hint--rounded" aria-label="Notificaciones"><span class=" glyphicon glyphicon-bell text-color-icon" ><small class="small ">75</small></span></a></li>
          <li><a href="#" class="hint--bottom  hint--rounded" aria-label="Mensajes"><span class="glyphicon glyphicon-comment text-color-icon "><small class="small">5</small></span></a></li>
         
