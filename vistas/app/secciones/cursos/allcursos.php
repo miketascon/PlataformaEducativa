@@ -17,7 +17,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Cursos</h2>
           <ul class="list-inline ">
-          	<li><a href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#addCurso"><span class="glyphicon glyphicon-book"></span> Nuevo Curso</a></li>
+          	<li><a href="?view=cursos&mode=add" type="button" class="btn btn-success"><span class="glyphicon glyphicon-book"></span> Nuevo Curso</a></li>
            	
           </ul>
           <!-- Modal add-->
@@ -84,7 +84,7 @@
               <?php   
               $conn = new ezSQL_mysql(DB_USER, DB_PASS, DB_NAME);
               $total_cursos = $conn->get_var('SELECT count(*) FROM cursos');
-              $resultados   = 4;
+              $resultados   = 10;
               $paginacion = new Zebra_Pagination();
               $paginacion->records($total_cursos);
               $paginacion->records_per_page($resultados);

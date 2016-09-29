@@ -17,7 +17,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Usuarios</h2>
           <ul class="list-inline ">
-          	<li><a href="#" type="button" class="btn btn-success" data-toggle="modal" data-target="#addUsuario"><span class="glyphicon glyphicon-user"></span> Nuevo Usuario</a></li>
+          	<li><a href="?view=usuario&mode=add" type="button" class="btn btn-success" ><span class="glyphicon glyphicon-user"></span> Nuevo Usuario</a></li>
            	
           </ul>
 

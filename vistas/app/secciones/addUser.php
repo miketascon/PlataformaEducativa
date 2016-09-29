@@ -25,39 +25,43 @@
                 </div>
                 <div class="modal-body">
                 
-                   <form id="editUsuario" class="form-horizontal" action="?view=usuario&mode=edit&id_user=<?php echo $_GET['id_user'];?>" method="POST" onsubmit="return EditUser();" enctype="application/x-www-form-urlencoded">
+         <form id="regUsuario" class="form-horizontal" action="?view=usuario&mode=add" onsubmit="return AddUser();" method="POST" enctype="application/x-www-form-urlencoded">
                       <div class="form-group">
-                        <label for="names" class="col-lg-2 control-label">Nombres</label>
+                        <label for="names" class="col-lg-2 control-label focusColor">Nombres</label>
                          <div class="col-lg-10">
-                          <input type="text" class="form-control" id="names" name="names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['names']; ?>" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
-
+                         <div id="_AJAX_NOMBRE_"></div>
+                          <input type="text" class="form-control" id="names" name="names" placeholder="" maxlength="100" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
                          </div>
+
                     </div>
                     <div class="form-group">
                         <label for="last_names" class="col-lg-2 control-label">Apellidos</label>
                          <div class="col-lg-10">
-                          <input type="text" class="form-control" id="last_names" name="last_names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['last_names']; ?>" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
+                         <div id="_AJAX_APELLIDOS_"></div>
+                          <input type="text" class="form-control" id="last_names" name="last_names" placeholder="" maxlength="100" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-lg-2 control-label">Email</label>
                          <div class="col-lg-10">
-                          <input type="Email" name="email" class="form-control" id="email" placeholder="" value="<?php echo $_users[$_GET['id_user']]['email']; ?>">
+                          <div id="_AJAX_EMAIL_"></div>
+                          <input type="email" name="email" class="form-control" id="email" placeholder="" maxlength="100">
+
                          </div>
                     </div>
-                    
                     <div class="form-group">
                         <label for="password" class="col-lg-2 control-label">Contraseña</label>
                          <div class="col-lg-10">
-                          <input type="password" class="form-control" id="password" name="password" placeholder="" value="<?php echo Descrypt($_users[$_GET['id_user']]['password']) ; ?>">
+                         <div id="_AJAX_PASS_"></div>
+                          <input type="password" name="password"  class="form-control" id="password" placeholder="" maxlength="25">
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="gender" class="col-lg-2 control-label">Género</label>
                         <div class="col-lg-10">
                         <div id="_AJAX_GENERO_"></div>
-                          <select class="form-control" id="gender" name="gender"  >
-                              <option value="" disabled selected>Selecciona un valor</option>
+                          <select class="form-control" id="gender" name="gender" >
+                              <option value="" disabled selected>Seleccione una opción</option>
                               <option value="Masculino">Masculino</option>
                               <option value="Femenino">Femenino</option>
           
@@ -69,8 +73,8 @@
                         <label for="permisos" class="col-lg-2 control-label">Tipo de usuario</label>
                         <div class="col-lg-10">
                         <div id="_AJAX_PERMISOS_"></div>
-                          <select class="form-control" id="permisos" name="permisos" value="<?php echo $_users[$_GET['id_user']]['permisos']; ?>" >
-                              <option value="" disabled selected>Selecciona un valor</option>
+                          <select class="form-control" id="permisos" name="permisos" >
+                              <option value="" disabled selected="">Seleccione una opción</option>
                               <option value="1">Administrador</option>
                               <option value="2">Estudiante</option>
                               <option value="3">Profesor</option>
@@ -82,31 +86,30 @@
                       <div class="form-group">
                         <label for="phone" class="col-lg-2 control-label">Teléfono</label>
                          <div class="col-lg-10">
-                          <input type="number" class="form-control" name="phone"  id="phone" placeholder="" value="<?php echo $_users[$_GET['id_user']]['phone']; ?>">
+                          <input type="number" class="form-control" name="phone"  id="phone" placeholder="" maxlength="10">
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="cel_phone" class="col-lg-2 control-label">Celular</label>
                          <div class="col-lg-10">
-                          <input type="number" name="cel_phone"  class="form-control" id="cel_phone" placeholder="" value="<?php echo $_users[$_GET['id_user']]['cel_phone']; ?>">
+                          <input type="number" name="cel_phone"  class="form-control" id="cel_phone" placeholder="" maxlength="15">
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="address" class="col-lg-2 control-label">Dirección</label>
                          <div class="col-lg-10">
-                          <input type="text" class="form-control" name="address"  id="address" placeholder="" value="<?php echo $_users[$_GET['id_user']]['address']; ?>">
+                          <input type="text" class="form-control" name="address"  id="address" placeholder="" maxlength="45">
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="names_country" class="col-lg-2 control-label">Pais</label>
                          <div class="col-lg-10">
-                          <input type="text" class="form-control" name="names_country"  id="names_country" placeholder="" value="<?php echo $_users[$_GET['id_user']]['names_country']; ?>" pattern="[A-Z ÁÉÍÓÚÑñ]*">
+                          <input type="text" class="form-control" name="names_country"  id="names_country" placeholder="" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
                          </div>
                     </div>
-
                 <div class="modal-footer">
                     <a type="button" href="?view=admin" class="btn btn-default" data-dismiss="modal">Volver atras</a>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                    <button id="btn-guardar" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
                     </div>
                     
 
@@ -131,3 +134,5 @@
 </body>
 </html>
             
+
+                

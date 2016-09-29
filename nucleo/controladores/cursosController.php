@@ -14,7 +14,7 @@
 					header('location: ?view=cursos');
 
 				}else{
-					header('location: ?view=cursos');
+					include(APP_DIR . 'app/secciones/cursos/addCursos.php');
 
 				}
 				break;
