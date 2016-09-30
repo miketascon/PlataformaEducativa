@@ -49,6 +49,18 @@
 					}
 
 				}
+		case 'editImg':	
+			if($isset_id){
+					if($_POST){
+						$usuario->EditImg();
+						header('location: ?view=home');
+
+					}else{
+						include(APP_DIR . 'app/secciones/perfil.php');
+
+					}
+
+				}	
 
 		break;
 

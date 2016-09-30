@@ -54,7 +54,7 @@
 </nav>
 
 </header>
-<div class="content-page-container full-reset custom-scroll-containers ">
+<!--<div class="content-page-container full-reset custom-scroll-containers ">-->
 
 <?php if($_users[$_SESSION['app_id']]['permisos'] > 1){
                    echo '<section class="jumbotron">

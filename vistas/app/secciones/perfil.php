@@ -17,14 +17,35 @@
                             <legend>Imagen de Perfil</legend>
 
 
-                                    <img src="prueba.png" alt="" width="250" height="300">
+                            <a href="" data-toggle="modal" data-target="#myModal"><img src="prueba.png" alt="" width="250" height="300"></a>
 
-                                  <form action="almacenar.php" method="POST" enctype="multipart/form-data">
-                                        <label for="imagen">Imagen:</label>
-                                            <input type="file" name="imagen" id="imagen" />
-                                            <input type="submit" name="subir" value="Subir Imagen"/>
-                                    </form>
 
+
+
+                        <div class="modal fade" role="fialog" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                            <form action="?view=perfil&mode=edit&id_user=<?php echo $_users[$_SESSION['app_id']]['id_user'];?>" method="POST" enctype="multipart/form-data">
+                                                <label for="imagen">Imagen:</label>
+                                                    <input type="file" name="imagen" id="imagen" class="btn-primary form-control" value="Adjuntar"/>
+                                                   
+                                            </form>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+
+                                 
 
                             </div>
     						<form id="formPerfil" class="form-horizontal col-md-7 col-sm-12" action="?view=perfil&mode=edit&id_user=<?php echo $_users[$_SESSION['app_id']]['id_user'];?>" method="POST"  enctype="application/x-www-form-urlencoded">
