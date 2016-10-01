@@ -25,6 +25,7 @@
         </button>
       </form>
       <ul class="nav navbar-nav navbar-right">
+        <li><img style="margin-top: 8px;"  src="?view=obimagen" alt="" width="30" height="30"></li>
         <li><a <?php echo 'href="?view=perfil&mode=edit&id_user='.$_users[$_SESSION['app_id']]['id_user'].'"' ?> class="hint--bottom  hint--rounded" aria-label="Ver perfil"><span class="text-color-icon"><?php echo strtoupper($_users[$_SESSION['app_id']]['names']);  ?></span></a></li>
         <li><a href="#" class="hint--bottom  hint--rounded" aria-label="Notificaciones"><span class=" glyphicon glyphicon-bell text-color-icon" ><small class="small ">75</small></span></a></li>
          <li><a href="#" class="hint--bottom  hint--rounded" aria-label="Mensajes"><span class="glyphicon glyphicon-comment text-color-icon "><small class="small">5</small></span></a></li>
@@ -32,7 +33,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle hint--bottom  hint--rounded" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Menu de usuario"><span class="glyphicon glyphicon-user text-color-icon"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="?view=perfil">Perfil</a></li>
+            <li><a <?php echo 'href="?view=perfil&mode=edit&id_user='.$_users[$_SESSION['app_id']]['id_user'].'"' ?> >Perfil</a></li>
             <?php 
                 if($_users[$_SESSION['app_id']]['permisos'] == 1){
 
@@ -56,10 +57,12 @@
 </header>
 <!--<div class="content-page-container full-reset custom-scroll-containers ">-->
 
-<?php if($_users[$_SESSION['app_id']]['permisos'] > 1){
+<?php /*if($_users[$_SESSION['app_id']]['permisos'] > 1){
                    echo '<section class="jumbotron">
                         <div class="container">
                          <h3 class="info"><marquee class=" " behavior="left">Aqui va ir una variable para mostrar informacion deseada y esto es solo la prueba de como funcionara este dato</marquee></h3>
                         </div>
                         </section>';
-      } ?>
+      }*/ ?>
+
+      <section style="margin-bottom: 40px;" class="row"><div></div></section>

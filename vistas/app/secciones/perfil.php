@@ -17,7 +17,9 @@
                             <legend>Imagen de Perfil</legend>
 
 
-                            <a href="" data-toggle="modal" data-target="#myModal"><img src="prueba.png" alt="" width="250" height="300"></a>
+                            <a href="" data-toggle="modal" data-target="#myModal"><img src="?view=obimagen" alt="" width="250" height="250"></a>
+
+                            
 
 
 
@@ -27,33 +29,40 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">Modal title</h4>
+                                        <h4 class="modal-title">Imagen de Perfil</h4>
                                     </div>
+                                    <form action="?view=image" method="POST" enctype="multipart/form-data">
                                     <div class="modal-body">
-                                            <form action="?view=perfil&mode=edit&id_user=<?php echo $_users[$_SESSION['app_id']]['id_user'];?>" method="POST" enctype="multipart/form-data">
-                                                <label for="imagen">Imagen:</label>
-                                                    <input type="file" name="imagen" id="imagen" class="btn-primary form-control" value="Adjuntar"/>
+                                            
+                                   
+                                    <input type="file" name="imagen" id="imagen" class="btn-primary form-control" value="Adjuntar"/>
                                                    
-                                            </form>
+                                          
 
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                                         <input type="submit" value="Guardar" class="btn btn-primary"></input>
                                     </div>
+
+                                    </form>
                                  </div>
                                 </div>
                             </div>
 
+
+
+
                                  
 
                             </div>
-    						<form id="formPerfil" class="form-horizontal col-md-7 col-sm-12" action="?view=perfil&mode=edit&id_user=<?php echo $_users[$_SESSION['app_id']]['id_user'];?>" method="POST"  enctype="application/x-www-form-urlencoded">
+    						<form id="formPerfil" class="form-horizontal col-md-7 col-sm-12" action="?view=perfil&mode=edit&id_user=<?php echo $_users[$_SESSION['app_id']]['id_user'];?>" method="POST" onsubmit="return EditPerfil();"  enctype="application/x-www-form-urlencoded">
     							<fieldset>
     								<legend>Datos de usuario</legend>
     								 <div class="form-group">
                         <label for="names" class="col-lg-2 control-label">Nombres</label>
                          <div class="col-lg-10">
+                         <div id="_AJAX_NOMBRE_"></div>
                           <input type="text" class="form-control" id="names" name="names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['names']; ?>" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
 
                          </div>
@@ -61,12 +70,14 @@
                     <div class="form-group">
                         <label for="last_names" class="col-lg-2 control-label">Apellidos</label>
                          <div class="col-lg-10">
+                         <div id="_AJAX_APELLIDOS_"></div>
                           <input type="text" class="form-control" id="last_names" name="last_names" placeholder="" value="<?php echo $_users[$_GET['id_user']]['last_names']; ?>" pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*">
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-lg-2 control-label">Email</label>
                          <div class="col-lg-10">
+                         <div id="_AJAX_EMAIL_"></div>
                           <input type="Email" name="email" class="form-control" id="email" placeholder="" value="<?php echo $_users[$_GET['id_user']]['email']; ?>">
                          </div>
                     </div>

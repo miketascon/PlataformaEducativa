@@ -15,8 +15,9 @@ class Usuario{
 	private $address;
 	private $names_country;
 	private $imagen;
-	private $tipo_imagen;
 	private $fecha_reg;
+	private $tipo_imagen;
+	
 
 
 	public function __construct(){
@@ -92,52 +93,31 @@ class Usuario{
 	}
 
 	public function EditImg(){
-		if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0)
-		{
-    	echo "Ha ocurrido un error.";
-		}
-		else
-		{
-    // Verificamos si el tipo de archivo es un tipo de imagen permitido.
-    // y que el tamaño del archivo no exceda los 16MB
-    $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
-    $limite_kb = 163840;
+         $data = file_get_contents($_FILES['imagen']['tmp_name']);
+         $tipo = file_get_contents($_FILES['imagen']['type']);
+ 		$this->id_user = intval($_GET['id_user']);
+		$this->imagen = real_escape_string($data);
+		$this->tipo_imagen = real_escape_string($tipo);
+		$this->con->query("UPDATE user SET imagen='$this->imagen', tipo_imagen='$this->tipo_imagen' WHERE id_user='$this->id_user';");
 
-    if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024)
-    {
 
-        // Archivo temporal
-        $imagen_temporal = $_FILES['imagen']['tmp_name'];
 
-        // Tipo de archivo
-        $tipo = $_FILES['imagen']['type'];
 
-        // Leemos el contenido del archivo temporal en binario.
-        $fp = fopen($imagen_temporal, 'r+b');
-        $data = fread($fp, filesize($imagen_temporal));
-        fclose($fp);
-        
-        //Podríamos utilizar también la siguiente instrucción en lugar de las 3 anteriores.
-        // $data=file_get_contents($imagen_temporal);
+		/*$permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
+    	$limite_kb = 163840;
 
-        // Escapamos los caracteres para que se puedan almacenar en la base de datos correctamente.
-        //$data = mysql_escape_string($data);
 
-        // Insertamos en la base de datos.
-        $this->id_user = intval($_GET['id_user']);
-        $this->imagen = $this->con->real_escape_string($data);
-		$this->tipo_imagen = $this->con->real_escape_string($tipo);
+		if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024)
+    	{
 
-		$this->con->query("UPDATE user SET imagen='$this->imagen', tipo_imagen='$this->tipo_imagen'
+    		$this->con->query("UPDATE user SET imagen='$this->imagen', tipo_imagen='$this->tipo_imagen'
 			WHERE id_user='$this->id_user';");
-       
-       
-    }
-    else
-    {
-        echo "Formato de archivo no permitido o excede el tamaño límite de $limite_kb Kbytes.";
-    }
-}
+
+
+
+    	}*/
+        
+    		
 	}
 
 	public function Delete(){

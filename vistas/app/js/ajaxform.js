@@ -155,5 +155,51 @@ function AjaxCursos(){
 }
 
 
+function EditPerfil(){
+
+    var  ajax, names, last_names, email;
+    names = __('names').value;
+    last_names = __('last_names').value;    
+    email = __('email').value;  
+
+    if(names.length == 0){
+        
+        __('names').focus('focusColor');
+
+        ajax = '<div class="alerta alerta-danger">';            
+        ajax += '<p> El campo nombres debe contener un valor</p>';
+        ajax += '</div>';
+        __('_AJAX_NOMBRE_').innerHTML = ajax;
+        
+        return false;   
+
+        
+        
+            
+    }else if(last_names.length == 0){
+        __('last_names').focus('focusColor');
+
+        ajax = '<div class="alerta alerta-danger">';            
+        ajax += '<p> El campo apellidos debe contener un valor</p>';
+        ajax += '</div>';
+        __('_AJAX_APELLIDOS_').innerHTML = ajax;
+        
+        return false;
+    }else if(email.length == 0){
+
+        __('email').focus('focusColor');
+
+        ajax = '<div class="alerta alerta-danger">';            
+        ajax += '<p> El campo email debe contener un valor</p>';
+        ajax += '</div>';
+        __('_AJAX_EMAIL_').innerHTML = ajax;
+        
+        return false;
+    }
+    return true;
+    form.submit();
+}
+
+
 
 

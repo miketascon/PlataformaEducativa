@@ -41,7 +41,7 @@
 				if($isset_id){
 					if($_POST){
 						$usuario->EditPerfil();
-						header('location: ?view=home');
+						//header('location: ?view=home');
 
 					}else{
 						include(APP_DIR . 'app/secciones/perfil.php');
@@ -49,20 +49,7 @@
 					}
 
 				}
-		case 'editImg':	
-			if($isset_id){
-					if($_POST){
-						$usuario->EditImg();
-						header('location: ?view=home');
-
-					}else{
-						include(APP_DIR . 'app/secciones/perfil.php');
-
-					}
-
-				}	
-
-		break;
+	
 
   	    	default:
 			header('location: ?view=home');
